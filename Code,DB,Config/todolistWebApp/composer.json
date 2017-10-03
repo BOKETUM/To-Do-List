@@ -1,0 +1,6 @@
+{
+    "require": {
+        "php": "~7",
+        "csanquer/pdo-service-provider": "~1.1dev"
+    }
+}
