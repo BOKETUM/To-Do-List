@@ -1,0 +1,9 @@
+heroku login
+heroku create
+git init
+git add . && git commit -m 'd'
+git push heroku master
+heroku open
+
+heroku addons:create cleardb:ignite
+heroku config | grep CLEARDB_DATABASE_URL
