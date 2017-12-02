@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>To Do List</title>
+<frameset cols=”30%,40%,*”>
+
+<style>
+input.MyButton {
+width: 100%;
+padding: 20px;
+cursor: pointer;
+font-weight: bold;
+font-size: 150%;
+color: #fff;
+border: 1px solid #3366cc;
+border-radius: 10px;
+-moz-box-shadow:: 6px 6px 5px #999;
+-webkit-box-shadow:: 6px 6px 5px #999;
+box-shadow:: 6px 6px 5px #999;
+}
+input.MyBut {
+width:160px;
+padding: 11px;
+cursor: pointer;
+font-weight: bold;
+font-size: 100%;
+color: #fff;
+border: 1px solid #3366cc;
+border-radius: 10px;
+-moz-box-shadow:: 6px 6px 5px #999;
+-webkit-box-shadow:: 6px 6px 5px #999;
+box-shadow:: 6px 6px 5px #999;
+}
+label {
+font-family:serif;
+font-weight: bold;
+font-size: 150%;
+color: #585858;
+}
+</style>
+
+<script LANGUAGE="JavaScript">
+function check(myForm) {
+	
+submitResult = true;
+if(/^[a-zA-Z\d]{5,18}$/.test(myForm.cid.value)){
+	}
+else {submitResult = false ;alert("กรุณาใส่IDให้ถูกต้อง ");}
+
+if(submitResult && (/^[a-zA-Z\d]{7,16}$/.test(myForm.cpassword.value))){
+ 
+	}
+	 else  {
+	 if(submitResult){
+	  submitResult = false ; 
+	  alert("กรุณาใส่Passwordให้ถูกต้อง");
+	  }
+	 }
+
+if(submitResult && (/^[ก-ฮ-ั-ิะ-ุ-ูเแไใโ-์-่-้-๊-๋-ึ-ื]{3,16}$/.test(myForm.cname.value))){
+
+	}
+	 else  {
+	 if(submitResult){
+	  submitResult = false ; 
+	  alert("กรุณาใส่ชื่อให้ถูกต้อง");
+	  }
+	 }
+
+ if(submitResult && (/^[ก-ฮ-ั-ิะ-ุ-ูเแไใโ-์-่-้-๊-๋-ึ-ื]{3,26}$/.test(myForm.clname.value))){
+
+	}
+	 else  {
+	 if(submitResult){
+	  submitResult = false ; 
+	  alert("กรุณาใส่นามสกุลให้ถูกต้อง");
+	  }
+	 }
+	
+return submitResult ;
+}
+</script>
+
+<body>
+
+	<form id="login-form" class="login-form" style="height: 700px;" action="register.php" method="post" onSubmit="return check(this);" >
+	<br><br><br>
+	<div class="h1">REGISTER</div>
+	<div align="center">
+	<table>	
+		<tr>
+			<td align="right"><label>Id :</label></td>
+			<td><input type="text" name="cid"></td>
+		</tr>
+		<tr>
+			<td></td>
+            <td><font color="#FF0000">* ภาษาอังกฤษ หรือ ตัวเลข ความยาว 5-18</font></td>
+          
+		</tr>
+		<tr>
+			<td align="right"><label>Password :</label></td>
+			<td><input type="password" name="cpassword"></td>
+		</tr>
+		<tr>
+			<td></td>
+            <td><font color="#FF0000">* ภาษาอังกฤษ หรือ ตัวเลข ความยาว 7-16</font></td>
+		</tr>
+		<tr>
+			<td align="right"><label>ชื่อ :</label></td>
+			<td><input type="text" name="cname" >
+		</tr>
+		<tr>
+			<td></td>
+            <td><font color="#FF0000">* กรอกชื่อจริง ภาษาไทยเท่านั้น</font></td>
+		</tr>
+		<tr>
+			<td align="right"><label>นามสกุล :</label></td>
+			<td><input type="text" name="clname"></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><font color="#FF0000">* นามสกุลจริง ภาษาไทยเท่านั้น</font></td>
+		</tr>		
+	</table>
+	</div>
+	<br>
+	<div align="center"><input style="background: #DC143C;" type="button" value="Back" onclick="window.location.href='login.php'">
+	<input style="background:#32CD32;" type="submit" value="Ok"></div>
+	</form>		
+		
+</body>
+</html>
